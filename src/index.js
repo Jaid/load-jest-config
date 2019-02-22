@@ -1,105 +1,61 @@
-/** @module load-jest-config */
+import path from "path"
+
+import {sync as readPkg} from "read-pkg"
+import {sync as readPkUp} from "read-pkg-up"
+import fss from "@absolunet/fss"
 
 /**
- * @typedef valueGenerator
- * @type {function}
- * @param {string} value Original array entry
- * @param {number} index Index of the array entry (starts at 0)
- * @returns {*} Anything that will be the object entry value
+ * @typedef options
+ * @type {object}
+ * @property {string} [cwd=process.cwd()] Directory to search in
+ * @property {boolean} [findUp=true] If `true`, also search in parent folders
  */
 
 /**
- * @typedef asyncValueGenerator
- * @type {function}
- * @async
- * @param {string} value Original array entry
- * @param {number} index Index of the array entry (starts at 0)
- * @returns {*} Anything that will be the object entry value
+ * @typedef result
+ * @type {object}
+ * @property {string} path The absolute path where the config got loaded from
+ * @property {object} jestConfig Jest config data
  */
-
-const debug = require("debug")(_PKG_NAME)
-
-const emptyReturn = {}
 
 /**
- * Converts an array to an object with static keys and customizable values
- * @example
- * import loadJestConfig from "load-jest-config"
- * let result = loadJestConfig(["a", "b"])
- * result = {a: null, b: null}
- * @example
- * import loadJestConfig from "load-jest-config"
- * let result = loadJestConfig(["a", "b"], "value")
- * result = {a: "value", b: "value"}
- * @example
- * import loadJestConfig from "load-jest-config"
- * let result = loadJestConfig(["a", "b"], (key, index) => `value for ${key} #${index + 1}`)
- * result = {a: "value for a #1", b: "value for b #2"}
- * @function
- * @param {string[]} array Keys for the generated object
- * @param {valueGenerator|*} [valueGenerator=null] Optional function that sets the object values based on key and index
- * @returns {object<string, *>} A generated object based on the array input
+ * @function default
+ * @param {options} [options] Options
+ * @returns {result|false} Result (or `false` if no config is found)
  */
-export default (array, valueGenerator = null) => {
-  if (!Array.isArray(array) || !array.length) {
-    return emptyReturn
+export default options => {
+  options = {
+    cwd: process.cwd(),
+    findUp: true,
+    ...options,
   }
-  const object = {}
-  if (typeof valueGenerator === "function") {
-    array.forEach((key, index) => {
-      object[key] = valueGenerator(key, index)
+  if (options.findUp) {
+    const packageJson = readPkUp({
+      cwd: options.cwd,
     })
+    if (packageJson?.pkg?.jest) {
+      return {
+        path: packageJson.path,
+        jestConfig: packageJson.pkg.jest,
+      }
+    }
   } else {
-    for (const value of array) {
-      object[value] = valueGenerator
-    }
-  }
-  return object
-}
-
-/**
- * Converts an array to an object with static keys and customizable values
- * @example
- * import fs from "fs"
- * import path from "path"
- * import {parallel} from "load-jest-config"
- * const keys = ["license", "readme", "package", ".travis", "not-here"]
- * const valueGenerator = async name => {
- *   const files = await fs.promises.readdir(path.resolve(__dirname, ".."))
- *   for (const file of files) {
- *     if (file.startsWith(`${name}.`)) {
- *       const stat = await fs.promises.stat(path.resolve(__dirname, "..", file), "utf8")
- *       return stat.size
- *     }
- *   }
- *   return null
- * }
- * let result = await parallel(keys, valueGenerator)
- * result = { ".travis": 1672, license: 1099, package: 1948, readme: 132, "not-here": null }
- * @async
- * @function
- * @param {string[]} array Keys for the generated object
- * @param {asyncValueGenerator|*} [valueGenerator=null] Async function that sets the object values based on key and index
- * @returns {Promise<object<string, *>>} A generated object based on the array input
- */
-export const parallel = async (array, valueGenerator = null) => {
-  if (!Array.isArray(array) || !array.length) {
-    return emptyReturn
-  }
-  const object = {}
-  if (typeof valueGenerator === "function") {
-    for (const key of array) {
-      object[key] = null // Setting object keys synchronously to ensure order
-    }
-    const jobs = array.map(async (key, index) => {
-      const value = await valueGenerator(key, index)
-      object[key] = value
+    const packageJson = readPkg({
+      cwd: options.cwd,
     })
-    await Promise.all(jobs)
-  } else {
-    for (const value of array) {
-      object[value] = valueGenerator
+    if (packageJson?.jest) {
+      return {
+        path: path.join(options.cwd, "package.json"),
+        jestConfig: packageJson.jest,
+      }
     }
   }
-  return object
+  const jestConfigFile = path.join(options.cwd, "jest.config.js")
+  if (fss.pathExists(jestConfigFile)) {
+    return {
+      path: jestConfigFile,
+      jestConfig: __non_webpack_require__(jestConfigFile),
+    }
+  }
+  return false
 }
