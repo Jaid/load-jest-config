@@ -3,6 +3,15 @@
 
 Loads Jest configs from jest.config.js or package.json#jest.
 
+## Installation
+<a href='https://npmjs.com/package/load-jest-config'><img alt='npm logo' src='https://raw.githubusercontent.com/npm/logos/master/npm%20logo/npm-logo-red.png' height=16/></a>
+```bash
+npm install --save load-jest-config@^
+```
+<a href='https://yarnpkg.com/package/load-jest-config'><img alt='Yarn logo' src='https://raw.githubusercontent.com/yarnpkg/assets/master/yarn-kitten-full.png' height=24/></a>
+```bash
+yarn add load-jest-config@^
+```
 
 
 ## Try it out
