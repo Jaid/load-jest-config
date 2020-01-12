@@ -1,67 +1,68 @@
 # load-jest-config
 
 
-Loads Jest configs from jest.config.js or package.json#jest.
+<a href="https://raw.githubusercontent.com/Jaid/load-jest-config/master/license.txt"><img src="https://img.shields.io/github/license/Jaid/load-jest-config?style=flat-square" alt="License"/></a>  
+<a href="https://actions-badge.atrox.dev/Jaid/load-jest-config/goto"><img src="https://img.shields.io/endpoint.svg?style=flat-square&url=https%3A%2F%2Factions-badge.atrox.dev%2FJaid%2Fload-jest-config%2Fbadge" alt="Build status"/></a> <a href="https://github.com/Jaid/load-jest-config/commits"><img src="https://img.shields.io/github/commits-since/Jaid/load-jest-config/v1.0.3?style=flat-square&logo=github" alt="Commits since v1.0.3"/></a> <a href="https://github.com/Jaid/load-jest-config/commits"><img src="https://img.shields.io/github/last-commit/Jaid/load-jest-config?style=flat-square&logo=github" alt="Last commit"/></a> <a href="https://github.com/Jaid/load-jest-config/issues"><img src="https://img.shields.io/github/issues/Jaid/load-jest-config?style=flat-square&logo=github" alt="Issues"/></a>  
+<a href="https://npmjs.com/package/load-jest-config"><img src="https://img.shields.io/npm/v/load-jest-config?style=flat-square&logo=npm&label=latest%20version" alt="Latest version on npm"/></a> <a href="https://github.com/Jaid/load-jest-config/network/dependents"><img src="https://img.shields.io/librariesio/dependents/npm/load-jest-config?style=flat-square&logo=npm" alt="Dependents"/></a> <a href="https://npmjs.com/package/load-jest-config"><img src="https://img.shields.io/npm/dm/load-jest-config?style=flat-square&logo=npm" alt="Downloads"/></a>
+
+**Loads Jest configs from jest.config.js or package.json#jest.**
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## Installation
-<a href='https://npmjs.com/package/load-jest-config'><img alt='npm logo' src='https://github.com/Jaid/action-readme/raw/master/images/base-assets/npm.png'/></a>
+<a href="https://npmjs.com/package/load-jest-config"><img src="https://img.shields.io/badge/npm-load--jest--config-C23039?style=flat-square&logo=npm" alt="load-jest-config on npm"/></a>
 ```bash
 npm install --save load-jest-config@^1.0.3
 ```
-<a href='https://yarnpkg.com/package/load-jest-config'><img alt='Yarn logo' src='https://github.com/Jaid/action-readme/raw/master/images/base-assets/yarn.png'/></a>
+<a href="https://yarnpkg.com/package/load-jest-config"><img src="https://img.shields.io/badge/Yarn-load--jest--config-2F8CB7?style=flat-square&logo=yarn&logoColor=white" alt="load-jest-config on Yarn"/></a>
 ```bash
 yarn add load-jest-config@^1.0.3
 ```
 
 
 
-## Documentation
-## Functions
 
-<dl>
-<dt><a href="#default">default([options])</a> ⇒ <code><a href="#result">result</a></code> | <code>false</code></dt>
-<dd></dd>
-</dl>
 
-## Typedefs
 
-<dl>
-<dt><a href="#options">options</a> : <code>object</code></dt>
-<dd></dd>
-<dt><a href="#result">result</a> : <code>object</code></dt>
-<dd></dd>
-</dl>
 
-**Kind**: global function  
-**Returns**: [<code>result</code>](#result) \| <code>false</code> - Result (or `false` if no config is found)  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| [options] | [<code>options</code>](#options) | Options |
+## Development
 
-**Kind**: global typedef  
-**Properties**
 
-| Name | Type | Default | Description |
-| --- | --- | --- | --- |
-| [cwd] | <code>string</code> | <code>&quot;process.cwd()&quot;</code> | Directory to search in |
-| [findUp] | <code>boolean</code> | <code>true</code> | If `true`, also search in parent folders |
 
-**Kind**: global typedef  
-**Properties**
-
-| Name | Type | Description |
-| --- | --- | --- |
-| path | <code>string</code> | The absolute path where the config got loaded from |
-| jestConfig | <code>object</code> | Jest config data |
-
+Setting up:
+```bash
+git clone git@github.com:Jaid/load-jest-config.git
+cd load-jest-config
+npm install
+```
+Testing:
+```bash
+npm run test:dev
+```
+Testing in production environment:
+```bash
+npm run test
+```
 
 
 ## License
 ```text
 MIT License
 
-Copyright © 2019, Jaid <jaid.jsx@gmail.com> (github.com/jaid)
+Copyright © 2020, Jaid <jaid.jsx@gmail.com> (github.com/jaid)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
