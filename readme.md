@@ -1,9 +1,9 @@
 # load-jest-config
 
 
-<a href="https://raw.githubusercontent.com/Jaid/load-jest-config/master/license.txt"><img src="https://img.shields.io/github/license/Jaid/load-jest-config?style=flat-square" alt="License"/></a>  
-<a href="https://actions-badge.atrox.dev/Jaid/load-jest-config/goto"><img src="https://img.shields.io/endpoint.svg?style=flat-square&url=https%3A%2F%2Factions-badge.atrox.dev%2FJaid%2Fload-jest-config%2Fbadge" alt="Build status"/></a> <a href="https://github.com/Jaid/load-jest-config/commits"><img src="https://img.shields.io/github/commits-since/Jaid/load-jest-config/v1.0.3?style=flat-square&logo=github" alt="Commits since v1.0.3"/></a> <a href="https://github.com/Jaid/load-jest-config/commits"><img src="https://img.shields.io/github/last-commit/Jaid/load-jest-config?style=flat-square&logo=github" alt="Last commit"/></a> <a href="https://github.com/Jaid/load-jest-config/issues"><img src="https://img.shields.io/github/issues/Jaid/load-jest-config?style=flat-square&logo=github" alt="Issues"/></a>  
-<a href="https://npmjs.com/package/load-jest-config"><img src="https://img.shields.io/npm/v/load-jest-config?style=flat-square&logo=npm&label=latest%20version" alt="Latest version on npm"/></a> <a href="https://github.com/Jaid/load-jest-config/network/dependents"><img src="https://img.shields.io/librariesio/dependents/npm/load-jest-config?style=flat-square&logo=npm" alt="Dependents"/></a> <a href="https://npmjs.com/package/load-jest-config"><img src="https://img.shields.io/npm/dm/load-jest-config?style=flat-square&logo=npm" alt="Downloads"/></a>
+<a href="https://raw.githubusercontent.com/jaid/load-jest-config/master/license.txt"><img src="https://img.shields.io/github/license/jaid/load-jest-config?style=flat-square" alt="License"/></a> <a href="https://github.com/sponsors/jaid"><img src="https://img.shields.io/badge/<3-Sponsor-FF45F1?style=flat-square" alt="Sponsor load-jest-config"/></a>
+<a href="https://actions-badge.atrox.dev/jaid/load-jest-config/goto"><img src="https://img.shields.io/endpoint.svg?style=flat-square&url=https%3A%2F%2Factions-badge.atrox.dev%2Fjaid%2Fload-jest-config%2Fbadge" alt="Build status"/></a> <a href="https://github.com/jaid/load-jest-config/commits"><img src="https://img.shields.io/github/commits-since/jaid/load-jest-config/v1.0.3?style=flat-square&logo=github" alt="Commits since v1.0.3"/></a> <a href="https://github.com/jaid/load-jest-config/commits"><img src="https://img.shields.io/github/last-commit/jaid/load-jest-config?style=flat-square&logo=github" alt="Last commit"/></a> <a href="https://github.com/jaid/load-jest-config/issues"><img src="https://img.shields.io/github/issues/jaid/load-jest-config?style=flat-square&logo=github" alt="Issues"/></a>  
+<a href="https://npmjs.com/package/load-jest-config"><img src="https://img.shields.io/npm/v/load-jest-config?style=flat-square&logo=npm&label=latest%20version" alt="Latest version on npm"/></a> <a href="https://github.com/jaid/load-jest-config/network/dependents"><img src="https://img.shields.io/librariesio/dependents/npm/load-jest-config?style=flat-square&logo=npm" alt="Dependents"/></a> <a href="https://npmjs.com/package/load-jest-config"><img src="https://img.shields.io/npm/dm/load-jest-config?style=flat-square&logo=npm" alt="Downloads"/></a>
 
 **Loads Jest configs from jest.config.js or package.json#jest.**
 
@@ -37,14 +37,13 @@ yarn add load-jest-config@^1.0.3
 
 
 
-
 ## Development
 
 
 
 Setting up:
 ```bash
-git clone git@github.com:Jaid/load-jest-config.git
+git clone git@github.com:jaid/load-jest-config.git
 cd load-jest-config
 npm install
 ```
