@@ -36,5 +36,6 @@
     "prepareActionJest": "npm run build:prod"
   },
   "name": "load-jest-config",
-  "description": "Loads Jest configs from jest.config.js or package.json#jest."
+  "description": "Loads Jest configs from jest.config.js or package.json#jest.",
+  "funding": "https://github.com/sponsors/jaid"
 }
