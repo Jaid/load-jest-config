@@ -37,5 +37,9 @@
   },
   "name": "load-jest-config",
   "description": "Loads Jest configs from jest.config.js or package.json#jest.",
-  "funding": "https://github.com/sponsors/jaid"
+  "funding": "https://github.com/sponsors/jaid",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jaid/load-jest-config"
+  }
 }
