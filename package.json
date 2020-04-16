@@ -41,5 +41,19 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/jaid/load-jest-config"
-  }
+  },
+  "homepage": "https://github.com/Jaid/load-jest-config",
+  "keywords": [
+    "config",
+    "environment",
+    "find",
+    "jest",
+    "jest-config",
+    "loader",
+    "options",
+    "read",
+    "settings",
+    "test",
+    "tester"
+  ]
 }
