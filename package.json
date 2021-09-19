@@ -54,5 +54,6 @@
     "settings",
     "test",
     "tester"
-  ]
+  ],
+  "type": "module"
 }
